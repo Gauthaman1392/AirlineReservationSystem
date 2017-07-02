@@ -17,16 +17,16 @@ public class FlightService {
 
 	public FlightInformation getFlightInfo(Integer flightID) {
 		FlightInformation flightInformation = new FlightInformation();
-		flightInformation.setAirlineId(100);
-		flightInformation.setAirlineName("BA");
-		flightInformation.setArrivalTime("20:00");
-		flightInformation.setDuration("13");
-		flightInformation.setDepartureTime("00:00");
-		flightInformation.setAvailableSeats(50);
-		flightInformation.setDestination("INDIA");
+		flightInformation.setAirlineId(1001);
+		flightInformation.setAirlineName("AmericanAirlines");
+		flightInformation.setArrivalTime("08:00");
+		flightInformation.setDuration("14");
+		flightInformation.setDepartureTime("01:00");
+		flightInformation.setAvailableSeats(200);
+		flightInformation.setDestination("France");
 		flightInformation.setOrigin("USA");
-		flightInformation.setPrice(500.0);
-		flightInformation.setTotalSeats(100);
+		flightInformation.setPrice(800.0);
+		flightInformation.setTotalSeats(120);
 		flightInformation.setFlightId(flightID);
 		
 		return flightInformation;
