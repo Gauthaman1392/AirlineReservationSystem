@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://www.example.org/FlightDetailsService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FlightDetailsService"
+	targetNamespace="http://www.example.org/FlightDetailsService/">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.example.org/FlightDetailsService/">
+			<xsd:element name="getFlightDetails">
+				<xsd:complexType>
+					<xsd:sequence>
+          	<xsd:element name="flightDetailsGetRequest" type="tns:flightDetailsGetRequestType"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getFlightDetailsResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+          	<xsd:element name="flightDetailsGetResponse" type="tns:flightDetailsGetResponseType"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:complexType name="flightDetailsGetRequestType">
+				<xsd:sequence>
+					<xsd:element name="flightId" type="xsd:int"></xsd:element>
+					<xsd:element name="flightDepartureDate" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="flightDetailsGetResponseType">
+				<xsd:sequence>
+					<xsd:element name="flightId" type="xsd:int"></xsd:element>
+					<xsd:element name="flightDepartureDate" type="xsd:string">
+					</xsd:element>
+					<xsd:element name="price" type="xsd:double"></xsd:element>
+					<xsd:element name="availableSeats" type="xsd:int"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="createFlightDetails">
+				<xsd:complexType>
+					<xsd:sequence>
+
+      			<xsd:element name="flightDetailsCreateRequest" type="tns:flightDetailsCreateRequestType"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="createFlightDetailsResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+
+      			<xsd:element name="flightDetailsCreateResponse" type="tns:flightDetailsCreateResponseType"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:complexType name="flightDetailsCreateRequestType">
+				<xsd:sequence>
+					<xsd:element name="flightId" type="xsd:int"></xsd:element>
+					<xsd:element name="flightDepartureDate" type="xsd:string">
+					</xsd:element>
+					<xsd:element name="price" type="xsd:double"></xsd:element>
+					<xsd:element name="availableSeats" type="xsd:int"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="flightDetailsCreateResponseType">
+				<xsd:sequence>
+					<xsd:element name="message" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="deleteFlightDetails">
+				<xsd:complexType>
+					<xsd:sequence>
+
+      			<xsd:element name="flightDetailsDeleteRequest" type="tns:flightDetailsDeleteRequestType"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="deleteFlightDetailsResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+
+      			<xsd:element name="flightDetailsDeleteResponse" type="tns:flightDetailsDeleteResponseType"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:complexType name="flightDetailsDeleteRequestType">
+				<xsd:sequence>
+
+					<xsd:element name="flightId" type="xsd:int"></xsd:element>
+					<xsd:element name="flightDepartureDate" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="flightDetailsDeleteResponseType">
+				<xsd:sequence>
+					<xsd:element name="message" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="updateFlightDetails">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="flightDetailsUpdateRequest"
+							type="tns:flightDetailsUpdateRequestType">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updateFlightDetailsResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="flightDetailsUpdateResponse"
+							type="tns:flightDetailsUpdateResponseType">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		
+			<xsd:complexType name="flightDetailsUpdateRequestType">
+				<xsd:sequence>
+					<xsd:element name="flightId" type="xsd:int"></xsd:element>
+					<xsd:element name="flightDepartureDate"
+						type="xsd:string">
+					</xsd:element>
+					<xsd:element name="price" type="xsd:double"></xsd:element>
+					<xsd:element name="availableSeats" type="xsd:int"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		
+			<xsd:complexType name="flightDetailsUpdateResponseType">
+				<xsd:sequence>
+					<xsd:element name="message" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="getFlightDetailsRequest">
+		<wsdl:part element="tns:getFlightDetails" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="getFlightDetailsResponse">
+		<wsdl:part element="tns:getFlightDetailsResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="createFlightDetailsRequest">
+		<wsdl:part name="parameters" element="tns:createFlightDetails"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="createFlightDetailsResponse">
+		<wsdl:part name="parameters" element="tns:createFlightDetailsResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="deleteFlightDetailsRequest">
+		<wsdl:part name="parameters" element="tns:deleteFlightDetails"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="deleteFlightDetailsResponse">
+		<wsdl:part name="parameters" element="tns:deleteFlightDetailsResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updateFlightDetailsRequest">
+		<wsdl:part name="parameters" element="tns:updateFlightDetails"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updateFlightDetailsResponse">
+		<wsdl:part name="parameters" element="tns:updateFlightDetailsResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="FlightDetailsService">
+		<wsdl:operation name="getFlightDetails">
+			<wsdl:input message="tns:getFlightDetailsRequest" />
+			<wsdl:output message="tns:getFlightDetailsResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="createFlightDetails">
+			<wsdl:input message="tns:createFlightDetailsRequest"></wsdl:input>
+			<wsdl:output message="tns:createFlightDetailsResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="deleteFlightDetails">
+			<wsdl:input message="tns:deleteFlightDetailsRequest"></wsdl:input>
+			<wsdl:output message="tns:deleteFlightDetailsResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateFlightDetails">
+			<wsdl:input message="tns:updateFlightDetailsRequest"></wsdl:input>
+			<wsdl:output message="tns:updateFlightDetailsResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="FlightDetailsServiceSOAP" type="tns:FlightDetailsService">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="getFlightDetails">
+			<soap:operation
+				soapAction="http://www.example.org/FlightDetailsService/getFlightDetails" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="createFlightDetails">
+			<soap:operation
+				soapAction="http://www.example.org/FlightDetailsService/createFlightDetails" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="deleteFlightDetails">
+			<soap:operation
+				soapAction="http://www.example.org/FlightDetailsService/deleteFlightDetails" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateFlightDetails">
+			<soap:operation
+				soapAction="http://www.example.org/FlightDetailsService/updateFlightDetails" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="FlightDetailsService">
+		<wsdl:port binding="tns:FlightDetailsServiceSOAP" name="FlightDetailsServiceSOAP">
+			<soap:address location="http://www.example.org/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,4 @@
+trng\imcs\restwebservices\beans\FlightInformation.class
+trng\imcs\restwebservices\controller\RestServiceController.class
+trng\imcs\restwebservices\services\FlightService.class
+trng\imcs\restwebservices\RestWebServiceApp.class
